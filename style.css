@@ -31,7 +31,7 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
   margin: 0 20x 20px 0px;
 }
 
@@ -232,6 +232,21 @@ footer p {
     padding: 10px;
     width: 30%;
     justify-content: right;
-    margin: 0px 20px 0px 0px;
+    margin: 0px 20px 0px 20%;
+  }
+  
+  .img-about {
+    max-width: 25%;
+  }
+
+  .container {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+  }
+
+  .p-about {
+    flex-basis: 40%;
+    padding-left: 50%;
   }
 }
