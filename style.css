@@ -170,8 +170,8 @@ footer p {
 
   .group {
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: left;
   }
 
   .idea {
@@ -183,6 +183,13 @@ footer p {
     flex-direction: column;
     justify-content: center;
   }
+
+  .idea .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, fr);
+    grid-gap: 10px;
+  }
+  
 
   
 }
