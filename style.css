@@ -1,13 +1,12 @@
--------  General Styles -------
-
 body {
   font-family: "Lato", sans-serif;
+  width: 100%;
 }
 
 h2 {
   font-size: 26px;
   font-weight: 400;
-  margin: 0 1% 1% 1%;
+  margin: 0 10px 10px 10px;
   text-align: center;
 }
 
@@ -22,7 +21,9 @@ p {
 }
 
 section {
-  padding: 4%;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 section.alternate-background {
@@ -32,6 +33,7 @@ section.alternate-background {
 
 main img {
   width: 100%;
+  margin-bottom: 20px
 }
 
 /* ---  Groups & Items --- */
@@ -39,42 +41,41 @@ main img {
 .group {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .item {
-  flex: 1;
-  margin: 2%;
-}
-
-.item > img {
-  width: 100%;
-}
-
-.item-double {
-  padding: 1%;
-  flex: 2;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* -------  Navigation ------- */
 
 header {
-  display: flex;
   background-color: #ff385c;
-  padding: 20px 20px 0 20px;
+  padding: 0;
   text-align: center;
-  flex-direction: column;
-  align-items: center;
+  margin: 0;
+  width: 100%;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+  list-style: none;
 }
 
 .logo {
   font-family: "Pangolin", cursive;
-  font-size: 72px;
+  font-size: 60px;
   color: #fff;
-}
-
-#menu {
-  display: flex;
 }
 
 header nav ul li {
@@ -93,28 +94,26 @@ header nav ul li a:hover {
 }
 
 /* -------  Search Form ------- */
-.form-group {
-  display: flex;
-  flex: 1;
-}
-
 form {
-  border: 2px solid #ff385c;
-  padding: 1%;
   display: flex;
   flex-direction: column;
+  border: 2px solid #ff385c;
+  padding: 10px;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
 }
 
 form label {
-  flex: 1;
   font-weight: bold;
-  margin: 10px;
 }
 
 form select,
 form input {
-  margin: 10px 10px 20px 10px;
-  flex: 2;
+  margin-bottom: 20px;
+  width: 180px;
 }
 
 form button {
@@ -124,72 +123,97 @@ form button {
   font-size: 24px;
   padding: 15px;
   width: 100%;
-  flex: 1;
 }
 
 /* -------  Footer ------- */
 
 footer {
   background-color: #ff385c;
+  width: 100%;
 }
 
 footer p {
   color: #fff;
   text-align: center;
   padding: 20px;
+
 }
 
 /* -------  Media Query ------- */
-@media all and (min-width: 480px) {
-  header {
-    display: flex;
-    justify-content: space-between;
-  }
-  nav {
-    padding-top: 10px;
-  }
 
-  #menu {
-    flex-wrap: wrap;
-    line-height: 1.4;
-  }
+@media all and (min-width:480px){
+  header{
+      display:flex;
+      justify-content: space-between;
+      padding: 0;
+      align-items: center;
 
-  form {
-    flex-direction: row;
-    justify-content: space-between;
   }
 
   .logo {
-    font-size: 72px;
+    font-family: "Pangolin", cursive;
+    font-size: 40px;
+    color: #fff;
+    padding: 7px;
   }
 
-  .form-group {
+  header nav ul li a:hover{
+      color: pink;
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #ff385c;
+    padding: 15px 10px 0px 10px;
+    justify-content: space-between;
+    /* max-width: 100%; */
+  }
+
+  form div {
+    display: flex;
     flex-direction: column;
-    min-width: 0;
+    width: 15%;
+    padding-left: 15px;
+    padding-right: 15px;
+
+  }
+
+  form select,
+  form input {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  form button {
+    background-color: #ff385c;
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    padding: 15px;
+    width: 200px;
+    margin-bottom: 15px;
+    margin-right: 5px;
+    /* padding-right: 20px; */
   }
 
   .group {
-    flex-direction: row;
-    align-items: left;
-    justify-content: left;
-  }
-
-  .idea {
-    flex-direction: column;
-  }
-
-  .host-group, #host .item {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+  }
+
+  .item {
+    display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
+    margin: 10px;
   }
 
-  .idea .grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, fr);
-    grid-gap: 10px;
+  .item-double {
+    flex: 2;
   }
-  
 
-  
 }
